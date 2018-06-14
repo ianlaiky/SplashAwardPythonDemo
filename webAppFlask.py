@@ -22,7 +22,8 @@ def robotArm():
         try:
             # edit here
             m = ev3.LargeMotor('outA')
-            m.run_timed(time_sp=3000, speed_sp=500)
+            m.run_timed(time_sp=450, speed_sp=-1000)
+
             # end edit
             return json.dumps({"receivedRequest": "true", "variable": "extend","error":"None"})
         except:
@@ -33,7 +34,8 @@ def robotArm():
 
             #edit here
             m = ev3.LargeMotor('outA')
-            m.run_timed(time_sp=3000, speed_sp=500)
+            m.run_timed(time_sp=1000, speed_sp=500)
+
 
             #end edit
             return json.dumps({"receivedRequest": "true", "variable": "retract","error":"None"})
