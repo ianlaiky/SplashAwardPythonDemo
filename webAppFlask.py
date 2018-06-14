@@ -18,7 +18,7 @@ def load_webpage():
 
 @app.route('/init',methods=['GET'])
 def robotArm():
-    if request.values.get("variable").lower() == "extend".lower():
+    if request.values.get("variable").lower() == "out".lower():
         try:
             # edit here
             m = ev3.LargeMotor('outA')
@@ -29,7 +29,7 @@ def robotArm():
         except:
             return json.dumps({"receivedRequest": "false", "variable": "None","error":"Error when controlling arm"})
 
-    elif request.values.get("variable").lower() == "retract".lower():
+    elif request.values.get("variable").lower() == "in".lower():
         try:
 
             #edit here
